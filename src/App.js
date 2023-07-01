@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import './App.css';
+import Product from "./components/Top-products";
+import item from './Product-details'
+import Footer from './components/footer';
 
+
+
+function generateProduct(element){
+  return <div className='col-md-4'>
+  <Product
+        key = {element.id}
+        name = {element.productName}
+        price = {element.price}
+        image = {element.productImage}
+        stock = {element.stockDetails}
+        delivery = {element.deliveryTime}
+/>
+</div>
+}
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <h3 className='title'>Top Products</h3>
+    <div className="feature-section">
+    <div className="container">
+      <div className="row">
+        {item.map(generateProduct)}
+      </div>
     </div>
+  </div>   
+  <Footer />
+  </div>
   );
 }
 
