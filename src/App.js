@@ -1,38 +1,26 @@
+
+import './App.css';
+import Home from "./components/home";
+import Cart from "./components/cart";
+import Checkout from './components/checkout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import './App.css';
-import Product from "./components/Top-products";
-import item from './Product-details'
-import Footer from './components/footer';
+import { Routes , Route } from 'react-router-dom';
+import React, { useState } from 'react';
 
-
-
-function generateProduct(element){
-  return <div className='col-md-4'>
-  <Product
-        key = {element.id}
-        name = {element.productName}
-        price = {element.price}
-        image = {element.productImage}
-        stock = {element.stockDetails}
-        delivery = {element.deliveryTime}
-/>
-</div>
-}
 function App() {
-  return (
-    <div>
-    <h3 className='title'>Top Products</h3>
-    <div className="feature-section">
-    <div className="container">
-      <div className="row">
-        {item.map(generateProduct)}
-      </div>
-    </div>
-  </div>   
-  <Footer />
-  </div>
-  );
+
+  
+  const [cartItems , setCartItems] = useState("");
+    <Cart cartItems={cartItems} setCartItems={setCartItems} />
+    return (
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
+        <Route exact path="/checkout" element={<Checkout cartItems={cartItems} />} />
+      </Routes>
+    );
+    
 }
 
 export default App;

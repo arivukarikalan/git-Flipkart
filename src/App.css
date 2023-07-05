@@ -1,31 +1,59 @@
-body,html{
-  height:100%;
+.home-section{
+  margin:10px;
 }
-.img{
-  height:200px;
-  width:200px;
+.offer-section{
+  background-color: #80808030;
+  padding:20px 0px;
 }
-.card-group{
-  margin-top:20px;
-  margin-bottom:20px;
+.contact-section{
+  background-color: #80808030;
+  padding:20px 0px;
 }
-.card-container:hover{
-border-color: #000000;
+.banner{
+  color:white
 }
-.custom-text{
-  opacity: 60%;
+.custom-navbar {
+  background-color: black;
 }
-footer{
- border-radius: 10px;
-  padding:30px;
-  width:100%;
-  
+
+.custom-navbar .nav-link {
+  color: white;
 }
-.title{
-  margin-left: 20px;
-  margin-top: 30px;
-  color:red;
+
+.custom-navbar .navbar-brand {
+  color: white;
 }
-.title:hover{
-  color:#000000;
+.small-image {
+  width: 150px;
+  height: auto;
+}
+.customer-submit{
+ margin:20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #80808030;
+  border-radius: 10px;
+}
+
+.order{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width:400px;
+  margin:50px;
+  background-color: #ff000060;
+  border-radius: 50%;
+}
+
+.card-content {
+  height: 200px; /* Adjust the height as needed */
+}
+
+.card-content img {
+  height: 100%; /* Ensure the image fills the container */
+  object-fit: cover; /* Preserve aspect ratio and fill the container */
 }
